@@ -7,84 +7,127 @@
 </head>
 <body>
     <script>
-        function playGame() {
-          var humanScore = 0;
-          var computerScore = 0;
+            let humanScore = 0;
+            let computerScore = 0;
 
-          for(let i = 0; i < 5; i++){
-            function getComputerChoice() {
-                  let result = Math.ceil(Math.random() * 3); 
-                  if(result === 1) {
-                    return "rock";
-                  }
-                  else if(result === 2) {
-                    return "paper";
-                  }
-                  else {
-                    return "scissors"
-                  }
-                }
-
-            const computerChoice = getComputerChoice();
-
-            function getHumanChoice() {
-              let humanResult = prompt("Let's play Rock, Paper, Scissors! Enter your choice:");
-              if(humanResult.toLowerCase() === "rock") {
-                return "rock";
-              }
-              else if(humanResult.toLowerCase() === "paper") {
-                return "paper";
-              }
-              else if (humanResult.toLowerCase() === "scissors") {
-                return "scissors";
-              }
-              else {
-                return "to not follow the rules";
-              }
-            };
+              // function getHumanChoice() {
+              //   let humanResult = prompt("Let's play Rock, Paper, Scissors! Enter your choice:");
+              //   if(humanResult.toLowerCase() === "rock") {
+              //     return "rock";
+              //   }
+              //   else if(humanResult.toLowerCase() === "paper") {
+              //     return "paper";
+              //   }
+              //   else if (humanResult.toLowerCase() === "scissors") {
+              //     return "scissors";
+              //   }
+              //   else {
+              //     return "to not follow the rules";
+              //   }
+              // };
             
-            const humanChoice = getHumanChoice();
+             
 
-            function playRound(humanChoice, computerChoice) {
-              if (humanChoice === "rock" && computerChoice === "paper") {
-                computerScore++; 
-                console.log(`Paper beats rock! AI wins! AI:${computerScore} Human:${humanScore}`);
+              // function getComputerChoice() {
+              //   let result = Math.ceil(Math.random() * 3); 
+              //   if(result === 1) {
+              //     return "rock";
+              //   }
+              //   else if(result === 2) {
+              //     return "paper";
+              //   }
+              //   else {
+              //     return "scissors"
+              //     }
+              // }
+
+              function playRound() {
+                function getHumanChoice() {
+                let humanResult = prompt("Let's play Rock, Paper, Scissors! Enter your choice:");
+                if(humanResult.toLowerCase() === "rock") {
+                  return "rock";
+                }
+                else if(humanResult.toLowerCase() === "paper") {
+                  return "paper";
+                }
+                else if (humanResult.toLowerCase() === "scissors") {
+                  return "scissors";
+                }
+                else {
+                  return "to not follow the rules";
+                }
+              };
+                let humanChoice = getHumanChoice();
+                function getComputerChoice() {
+                let result = Math.ceil(Math.random() * 3); 
+                if(result === 1) {
+                  return "rock";
+                }
+                else if(result === 2) {
+                  return "paper";
+                }
+                else {
+                  return "scissors"
+                  }
               }
-              else if (humanChoice === "rock" && computerChoice === "scissors") {
-                humanScore++;
-                console.log(`Rock beats scissors! You win! AI:${computerScore} Human:${humanScore}`);
-              }
-              else if (humanChoice == "rock" && computerChoice === "rock") {
-                console.log("Y'all both picked rock! Let's try again!");
-              }
-              else if (humanChoice === "paper" && computerChoice === "scissors") {
-                computerScore++;
-                console.log(`Scissors beats paper! AI wins! AI:${computerScore} Human:${humanScore}`);
-              }
-              else if (humanChoice === "paper" && computerChoice === "rock") {
-                humanScore++;
-                console.log(`Paper beats rock! You win! AI:${computerScore} Human:${humanScore}`);
-              }
-              else if (humanChoice === "paper" && computerChoice === "paper") {
-                console.log("Y'all both picked paper! Let's try again!");
-              }
-              else if (humanChoice === "scissors" && computerChoice === "scissors") {
-                console.log("Y'all both picked scissors! Let's try again!");
-              } 
-              else if (humanChoice === "scissors" && computerChoice === "rock") {
-                computerScore++;
-                console.log(`Rock beats scissors! AI wins! AI:${computerScore} Human:${humanScore}`);
-              }
-              else if (humanChoice === "scissors" && computerChoice === "paper") {
-                humanScore++;
-                console.log(`Scissors beats paper! You win! AI:${computerScore} Human:${humanScore}`);
-              }
-              else {
-                console.log("Try again! That's not a choice.");
-              }
-            }
-        }
-      };
+                let computerChoice = getComputerChoice();
+                if (humanChoice === "rock" && computerChoice === "paper") {
+                  computerScore++; 
+                  return `Paper beats rock! AI wins! AI:${computerScore} Human:${humanScore}`;
+                }
+                else if (humanChoice === "rock" && computerChoice === "scissors") {
+                  humanScore++;
+                  return `Rock beats scissors! You win! AI:${computerScore} Human:${humanScore}`;
+                }
+                else if (humanChoice === "rock" && computerChoice === "rock") {
+                  return "Y'all both picked rock! Let's try again!";
+                }
+                else if (humanChoice === "paper" && computerChoice === "scissors") {
+                  computerScore++;
+                  return `Scissors beats paper! AI wins! AI:${computerScore} Human:${humanScore}`;
+                }
+                else if (humanChoice === "paper" && computerChoice === "rock") {
+                  humanScore++;
+                  return `Paper beats rock! You win! AI:${computerScore} Human:${humanScore}`;
+                }
+                else if (humanChoice === "paper" && computerChoice === "paper") {
+                  return "Y'all both picked paper! Let's try again!";
+                }
+                else if (humanChoice === "scissors" && computerChoice === "scissors") {
+                  return "Y'all both picked scissors! Let's try again!";
+                } 
+                else if (humanChoice === "scissors" && computerChoice === "rock") {
+                  computerScore++;
+                  return `Rock beats scissors! AI wins! AI:${computerScore} Human:${humanScore}`;
+                }
+                else if (humanChoice === "scissors" && computerChoice === "paper") {
+                  humanScore++;
+                  return `Scissors beats paper! You win! AI:${computerScore} Human:${humanScore}`;
+                }
+                else {
+                  return "Try again! That's not a choice.";
+                }
+              };
+
+              console.log(playRound());
+
+              function playGame() {
+                let roundResult = playRound();
+                return roundResult;
+                }
+              
+              console.log(playGame());
+
+              playGame();
+              console.log(playGame());
+
+              playGame();
+              console.log(playGame());
+
+              playGame();
+              console.log(playGame());
+
     </script>
+
 </body>
 </html>
