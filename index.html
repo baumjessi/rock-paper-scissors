@@ -9,40 +9,11 @@
     <script>
             let humanScore = 0;
             let computerScore = 0;
+            let roundNumber = 0;
+            let humanChoice;
+            let computerChoice;
 
-              // function getHumanChoice() {
-              //   let humanResult = prompt("Let's play Rock, Paper, Scissors! Enter your choice:");
-              //   if(humanResult.toLowerCase() === "rock") {
-              //     return "rock";
-              //   }
-              //   else if(humanResult.toLowerCase() === "paper") {
-              //     return "paper";
-              //   }
-              //   else if (humanResult.toLowerCase() === "scissors") {
-              //     return "scissors";
-              //   }
-              //   else {
-              //     return "to not follow the rules";
-              //   }
-              // };
-            
-             
-
-              // function getComputerChoice() {
-              //   let result = Math.ceil(Math.random() * 3); 
-              //   if(result === 1) {
-              //     return "rock";
-              //   }
-              //   else if(result === 2) {
-              //     return "paper";
-              //   }
-              //   else {
-              //     return "scissors"
-              //     }
-              // }
-
-              function playRound() {
-                function getHumanChoice() {
+              function getHumanChoice() {
                 let humanResult = prompt("Let's play Rock, Paper, Scissors! Enter your choice:");
                 if(humanResult.toLowerCase() === "rock") {
                   return "rock";
@@ -57,26 +28,31 @@
                   return "to not follow the rules";
                 }
               };
-                let humanChoice = getHumanChoice();
-                function getComputerChoice() {
-                let result = Math.ceil(Math.random() * 3); 
-                if(result === 1) {
+
+              function getComputerChoice() {
+                let computerResult = Math.ceil(Math.random() * 3); 
+                if(computerResult === 1) {
                   return "rock";
                 }
-                else if(result === 2) {
+                else if(computerResult === 2) {
                   return "paper";
                 }
                 else {
                   return "scissors"
                   }
-              }
-                let computerChoice = getComputerChoice();
+              };
+
+              function playRound() {
+                humanChoice = getHumanChoice();
+                computerChoice = getComputerChoice();
                 if (humanChoice === "rock" && computerChoice === "paper") {
-                  computerScore++; 
+                  computerScore++;
+                  roundNumber++; 
                   return `Paper beats rock! AI wins! AI:${computerScore} Human:${humanScore}`;
                 }
                 else if (humanChoice === "rock" && computerChoice === "scissors") {
                   humanScore++;
+                  roundNumber++;
                   return `Rock beats scissors! You win! AI:${computerScore} Human:${humanScore}`;
                 }
                 else if (humanChoice === "rock" && computerChoice === "rock") {
@@ -84,10 +60,12 @@
                 }
                 else if (humanChoice === "paper" && computerChoice === "scissors") {
                   computerScore++;
+                  roundNumber++;
                   return `Scissors beats paper! AI wins! AI:${computerScore} Human:${humanScore}`;
                 }
                 else if (humanChoice === "paper" && computerChoice === "rock") {
                   humanScore++;
+                  roundNumber++;
                   return `Paper beats rock! You win! AI:${computerScore} Human:${humanScore}`;
                 }
                 else if (humanChoice === "paper" && computerChoice === "paper") {
@@ -98,10 +76,12 @@
                 } 
                 else if (humanChoice === "scissors" && computerChoice === "rock") {
                   computerScore++;
+                  roundNumber++;
                   return `Rock beats scissors! AI wins! AI:${computerScore} Human:${humanScore}`;
                 }
                 else if (humanChoice === "scissors" && computerChoice === "paper") {
                   humanScore++;
+                  roundNumber++;
                   return `Scissors beats paper! You win! AI:${computerScore} Human:${humanScore}`;
                 }
                 else {
@@ -110,22 +90,90 @@
               };
 
               console.log(playRound());
+              console.log(`round number is ${roundNumber}`);
 
-              function playGame() {
-                let roundResult = playRound();
-                return roundResult;
+                function playGame() {
+                  if(roundNumber < 5) {
+                    console.log(playRound());
+                    console.log(`round number is ${roundNumber}`); 
+                 }
+                 else {
+                  return "GAME FUCKIN OVER";
+                 }
                 }
-              
-              console.log(playGame());
 
-              playGame();
-              console.log(playGame());
+                console.log(playGame());
 
-              playGame();
-              console.log(playGame());
+                function playGame() {
+                  if(roundNumber < 5) {
+                    console.log(playRound());
+                    console.log(`round number is ${roundNumber}`); 
+                 }
+                 else {
+                  return "GAME FUCKIN OVER";
+                 }
+                }
 
-              playGame();
-              console.log(playGame());
+                function playGame() {
+                  if(roundNumber < 5) {
+                    console.log(playRound());
+                    console.log(`round number is ${roundNumber}`); 
+                 }
+                 else {
+                  return "GAME FUCKIN OVER";
+                 }
+                }
+
+                function playGame() {
+                  if(roundNumber < 5) {
+                    console.log(playRound());
+                    console.log(`round number is ${roundNumber}`); 
+                 }
+                 else {
+                  return "GAME FUCKIN OVER";
+                 }
+                }
+
+                function playGame() {
+                  if(roundNumber < 5) {
+                    console.log(playRound());
+                    console.log(`round number is ${roundNumber}`); 
+                 }
+                 else {
+                  return "GAME FUCKIN OVER";
+                 }
+                }
+
+                function playGame() {
+                  if(roundNumber < 5) {
+                    console.log(playRound());
+                    console.log(`round number is ${roundNumber}`); 
+                    return "Let's play again!"
+                 }
+                 else {
+                  console.log(`AI: ${computerScore}`);
+                  console.log(`Human: ${humanScore}`);
+                  console.log("GAME FUCKIN OVER!")
+                  return "game over";
+                 }
+                }
+
+                playGame();
+                playGame();
+                playGame();
+                playGame();
+                playGame();
+                playGame();
+                playGame();
+                playGame();
+                playGame();
+                playGame();
+                playGame();
+                playGame();
+                playGame();
+                playGame();
+
+             
 
     </script>
 
