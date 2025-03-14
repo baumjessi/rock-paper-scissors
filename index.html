@@ -96,59 +96,7 @@
                   if(roundNumber < 5) {
                     console.log(playRound());
                     console.log(`round number is ${roundNumber}`); 
-                 }
-                 else {
-                  return "GAME FUCKIN OVER";
-                 }
-                }
-
-                console.log(playGame());
-
-                function playGame() {
-                  if(roundNumber < 5) {
-                    console.log(playRound());
-                    console.log(`round number is ${roundNumber}`); 
-                 }
-                 else {
-                  return "GAME FUCKIN OVER";
-                 }
-                }
-
-                function playGame() {
-                  if(roundNumber < 5) {
-                    console.log(playRound());
-                    console.log(`round number is ${roundNumber}`); 
-                 }
-                 else {
-                  return "GAME FUCKIN OVER";
-                 }
-                }
-
-                function playGame() {
-                  if(roundNumber < 5) {
-                    console.log(playRound());
-                    console.log(`round number is ${roundNumber}`); 
-                 }
-                 else {
-                  return "GAME FUCKIN OVER";
-                 }
-                }
-
-                function playGame() {
-                  if(roundNumber < 5) {
-                    console.log(playRound());
-                    console.log(`round number is ${roundNumber}`); 
-                 }
-                 else {
-                  return "GAME FUCKIN OVER";
-                 }
-                }
-
-                function playGame() {
-                  if(roundNumber < 5) {
-                    console.log(playRound());
-                    console.log(`round number is ${roundNumber}`); 
-                    return "Let's play again!"
+             
                  }
                  else {
                   console.log(`AI: ${computerScore}`);
@@ -158,22 +106,20 @@
                  }
                 }
 
-                playGame();
-                playGame();
-                playGame();
-                playGame();
-                playGame();
-                playGame();
-                playGame();
-                playGame();
-                playGame();
-                playGame();
-                playGame();
-                playGame();
-                playGame();
-                playGame();
+                while(roundNumber < 5) {
+                  playGame();
+                }
 
-             
+                function declareWinner() {
+                  if(computerScore > humanScore) {
+                    return "GAME OVER! AI Wins! :(";
+                  }
+                  else {
+                    return "GAME OVER! You win! :)";
+                  }
+                }; 
+
+                console.log(declareWinner());
 
     </script>
 
